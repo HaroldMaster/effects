@@ -1,4 +1,4 @@
-<div class="card-columns">
+<!-- <div class="card-columns">
     <div *ngFor="let user of users | async" class="card">
       <img [src]="user.avatar" class="card-img-top" alt="...">
       <div class="card-body">
@@ -7,4 +7,23 @@
         <p>{{user.id}}</p>
        </div>
     </div>
+  </div> -->
+  <!-- <div>{{usuarios | async | json}}</div> -->
+  <div *ngIf="(error| async)">
+    <div  class="alert alert-danger" role="alert">
+        {{error | async }}
+      </div>
   </div>
+ 
+  
+  <div class="card-columns">
+    <div *ngFor="let user of usuarios | async" class="card">
+      <img [src]="user.avatar" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{user.first_name}}</h5>
+        <h5 class="card-title">{{user.last_name}}</h5>
+        <p>{{user.id}}</p>
+       </div>
+    </div>
+  </div> 
+ 
