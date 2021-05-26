@@ -1,1 +1,14 @@
-<p>usuario works!</p>
+<div *ngIf="(error| async)">
+    <div  class="alert alert-danger" role="alert">
+        {{error | async }}
+      </div>
+  </div>
+
+<div  *ngIf="!(error| async)" class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="(usuario | async)?.avatar" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{(usuario | async)?.first_name}}</p>
+      <p class="card-text">{{(usuario | async)?.last_name}}<p>
+      <p class="card-text">{{(usuario | async)?.id}}</p>
+    </div>
+  </div>
